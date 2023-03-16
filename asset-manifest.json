@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/aeter-num/build/static/css/main.e98d73d4.css",
+    "main.js": "/aeter-num/build/static/js/main.8a8cd98c.js",
+    "static/js/787.f476df97.chunk.js": "/aeter-num/build/static/js/787.f476df97.chunk.js",
+    "index.html": "/aeter-num/build/index.html",
+    "main.e98d73d4.css.map": "/aeter-num/build/static/css/main.e98d73d4.css.map",
+    "main.8a8cd98c.js.map": "/aeter-num/build/static/js/main.8a8cd98c.js.map",
+    "787.f476df97.chunk.js.map": "/aeter-num/build/static/js/787.f476df97.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e98d73d4.css",
+    "static/js/main.8a8cd98c.js"
+  ]
+}
