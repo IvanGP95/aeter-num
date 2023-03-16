@@ -6,10 +6,12 @@ function ItemListContainer({greeting}) {
 
   const [products, setProducts] = useState([]);
 
+  const {categoryId} = useParams;
+
   useEffect(() => {
     const fetchData = async () => {
       setTimeout(async () => {
-        const response = await fetch("https://fakestoreapi.com/products");
+        const response = await fetch("https://fakestoreapi.com/products" +categoryId);
         const data = await response.json();
         setProducts(data);
       }, 1000);

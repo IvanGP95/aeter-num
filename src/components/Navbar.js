@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CartWidget from './CartWidget'
 import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai"
+import { NavLink } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 
 const Navbar = () => {
@@ -18,10 +20,10 @@ const Navbar = () => {
 
   return (
     
-    <nav className='w-full flex justify-between h-24 lg:px-44 sm:px-4 items-center content-center navbar'>
+    <nav className='w-full flex justify-between h-24 lg:px-44 items-center content-center navbar bg-white'>
         <div className='w-full flex justify-between p-4 items-center'>
     <div className='items-center'>
-    <h1 className='text-3xl'>Aeter-Num</h1>
+    <h1 className='text-3xl'> <NavLink to='/'>Aeter-Num</NavLink> </h1>
     </div>
     <div className=' items-center xl:flex lg:flex md:flex sm:hidden ss:hidden xs:hidden xxs:hidden'>
     <ul className='border-b list-none flex items-center ml-5 gap-12 text-lg'>
@@ -29,15 +31,16 @@ const Navbar = () => {
         <li className='hover:bg-gray-700 hover:text-white p-2 rounded-2xl'><a href='/'>About Us</a></li>
         <li className='hover:bg-gray-700 hover:text-white p-2 rounded-2xl'><a href='/'>Services</a></li>
         <li> 
-          <div>
-            <div onClick={productDrop}>
+          <div className='flex justify-center'>
+            <div className='  ' onClick={productDrop}>
               <button className='hover:bg-gray-700 hover:text-white p-2 rounded-2xl text-center'>Products</button>
             </div>
-            <div className={product ? 'fixed justify-center bg-white border p-2 ease-in-out duration-100' : 'fixed top-[-100%]'}>
+            <div className={product ? 'mt-2 top-16 fixed justify-center bg-white border p-2 ease-in-out duration-100' : 'hidden'}>
               <ul className='p-2'>
-                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'>Digital Art</li>
-                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'>NFT</li>
-                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'>Physical Art</li>
+                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'><NavLink to='/products/category/mensclothing'>Men's Clothing</NavLink></li>
+                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'><NavLink to='/products/category/womensclothing'>Women's Clothing</NavLink></li>
+                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'><NavLink to='/products/category/electronics'>Electronics</NavLink></li>
+                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'><NavLink to='/products/category/jewelery'>Jewelery</NavLink></li>
               </ul>
             </div>
           </div>
@@ -69,9 +72,10 @@ const Navbar = () => {
             </div>
             <div className={product ? 'w-full justify-center bg-white border p-2 ease-in-out duration-100' : 'fixed top-[-100%]'}>
               <ul className='p-2'>
-                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'>Digital Art</li>
-                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'>NFT</li>
-                <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'>Physical Art</li>
+              <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'><NavLink to='/products/mensclothing'>Men's Clothing</NavLink></li>
+              <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'><NavLink to='/products/womensclothing'>Women's Clothing</NavLink></li>
+              <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'><NavLink to='/products/category/electronics'>Electronics</NavLink></li>
+              <li className='hover:bg-gray-700 hover:text-white p-3 rounded-2xl'><NavLink to='/products/jewelery'>Jewelery</NavLink></li>
               </ul>
             </div>
           </div> </li>
